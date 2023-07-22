@@ -1,23 +1,13 @@
 package models;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 
-@Data
-@NoArgsConstructor
-public class PersonCarModel {
+public class PersonCar {
 
     private Integer personId;
     private String carNumber;
     private String carName;
 
-    public PersonCarModel(Integer personId,
-                          String carNumber,
-                          String carName) {
-        this.personId = personId;
-        this.carNumber = carNumber;
-        this.carName = carName;
-    }
+    public PersonCar(){}
 
     public Integer getPersonId() {
         return personId;
