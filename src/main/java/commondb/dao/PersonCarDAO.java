@@ -1,6 +1,6 @@
-package dao;
+package commondb.dao;
 
-import models.PersonCar;
+import commondb.models.PersonCar;
 import org.jdbi.v3.core.Handle;
 
 
