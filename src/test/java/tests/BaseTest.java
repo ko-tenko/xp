@@ -4,18 +4,21 @@ import commonapi.ApiClient;
 import commonapi.RequestSpecUtils;
 import commonapi.RequestUtils;
 import commonapi.models.User;
+
 import commondb.DbConnection;
 import commondb.dao.PersonCarDAO;
 import commondb.models.PersonCar;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import org.jdbi.v3.core.Handle;
 import org.junit.jupiter.api.Test;
+
 import retrofit2.Response;
 import utils.UserUtil;
 
 import java.util.Objects;
-
 
 public class BaseTest {
 
@@ -27,6 +30,7 @@ public class BaseTest {
         PersonCarDAO personCarDao = new PersonCarDAO(handle);
         PersonCar personCar = personCarDao.getById(1);
         LOGGER.info(personCar.getPersonId() + " " + personCar.getCarName() + " " + personCar.getCarNumber());
+        DbConnection.close(handle);
     }
 
     @Test

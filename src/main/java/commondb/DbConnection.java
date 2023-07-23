@@ -2,11 +2,11 @@ package commondb;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.Jdbi;
-import utils.FileManagerUtil;
 
-import java.sql.Connection;
+import utils.FileManagerUtil;
 import java.util.Objects;
 
 public class DbConnection {
@@ -32,12 +32,12 @@ public class DbConnection {
         }
     }
 
-    public static void close(Connection connection) {
+    public static void close(Handle handle) {
         try {
-            LOGGER.info("Closing the connection [{}]", connection);
-            connection.close();
+            LOGGER.info("Closing the connection [{}]", handle);
+            handle.close();
         } catch (Exception e) {
-            LOGGER.error("Failed to close the connection [{}]", connection);
+            LOGGER.error("Failed to close the connection [{}]", handle);
         }
     }
 }
