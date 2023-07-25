@@ -1,4 +1,4 @@
-package commondb.dao;
+package db.dao;
 
 
 public interface ICommonDAO<T> {

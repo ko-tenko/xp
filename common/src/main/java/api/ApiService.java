@@ -1,6 +1,6 @@
-package commonapi;
+package api;
 
-import commonapi.models.User;
+import api.models.User;
 
 import retrofit2.Call;
 import retrofit2.http.*;

@@ -1,4 +1,4 @@
-package commondb.models;
+package db.models;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

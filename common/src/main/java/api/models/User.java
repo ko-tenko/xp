@@ -1,10 +1,10 @@
-package commonapi.models;
+package api.models;
 
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
+@Builder
 public class User {
     private Integer userId;
     private Integer id;

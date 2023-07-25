@@ -1,14 +1,20 @@
-package commonapi;
+package api;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import okhttp3.OkHttpClient;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiClient {
+import utils.ConfigManager;
+import java.util.Objects;
 
-    private static final String BASE_URL ="https://jsonplaceholder.typicode.com/";
+
+public abstract class ApiClient {
+
+    private ApiClient(){}
 
     public static Retrofit getClient() {
         Gson gson = new GsonBuilder().setLenient().create();
@@ -16,10 +22,9 @@ public class ApiClient {
                 .addInterceptor(new HeaderInterceptor())
                 .build();
         return new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(Objects.requireNonNull(ConfigManager.getValue("urlApi")))
                 .client(httpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
     }
 }
-

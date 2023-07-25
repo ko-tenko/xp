@@ -1,0 +1,5 @@
+urlApi: https://jsonplaceholder.typicode.com/
+urlDb: jdbc:postgresql://localhost:5432/Lesson_db
+username: postgres
+password: 12345
+token: null

@@ -1,9 +1,10 @@
-package commonapi;
+package api;
 
 import retrofit2.Retrofit;
 
 
 public class RequestSpecUtils {
+
     private RequestSpecUtils() {
     }
 

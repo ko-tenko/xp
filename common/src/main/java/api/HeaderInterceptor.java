@@ -1,4 +1,4 @@
-package commonapi;
+package api;
 
 import java.io.IOException;
 
