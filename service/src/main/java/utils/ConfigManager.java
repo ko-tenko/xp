@@ -1,6 +1,7 @@
 package utils;
 
 import exceptions.FileReadException;
+import exceptions.FileWriteException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.yaml.snakeyaml.DumperOptions;
@@ -58,7 +59,7 @@ public class ConfigManager {
             yaml.dump(data, new OutputStreamWriter(outputStream, StandardCharsets.UTF_8));
         } catch (IOException e) {
             LOGGER.error("Error when writing to YAML file: " + YAML_FILE);
-            throw new FileReadException("Error writing from YAML file", e);
+            throw new FileWriteException("Error writing from YAML file", e);
         }
     }
 }
